@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
 
-
 	def new
 		@article = Article.new
 	end
@@ -35,8 +34,8 @@ class ArticlesController < ApplicationController
 	
   	def destroy
   		@article = Article.find(params[:id])
-  		@article = Article.destroy(params.require(:article).permit(:title, :text))
-  			redirect_to article_path(@article)
+  		@article = Article.destroy
+  	    redirect_to articles_path
 
   	end
 
